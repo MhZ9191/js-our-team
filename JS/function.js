@@ -27,6 +27,11 @@ function send(e) {
   const mail = document.getElementById("emailz");
   const immagine = document.getElementById("immagine");
 
+  if (!nome.value || !ruolo.value || !mail.value || !immagine.value) {
+    alert("Ricontrolla i campi");
+    return;
+  }
+
   const obj = {
     name: nome.value,
     role: ruolo.value,
