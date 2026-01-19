@@ -16,6 +16,11 @@ body {
   font-variation-settings: "wdth" 100;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .header-div {
   padding: 10px;
   text-align: center;
@@ -24,6 +29,67 @@ body {
 
 .header-div > h1 {
   font-size: 42px;
+  color: #e53170;
   letter-spacing: 2px;
   margin-bottom: 40px;
+}
+
+.main-sec {
+  padding: 10px;
+}
+
+#main-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  border: 2px #e53170 solid;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  overflow: hidden;
+  width: 350px;
+  height: 350px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.card-info {
+  text-align: center;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  background-image: linear-gradient(45deg, black 30%, #e53170 100%);
+}
+
+.card-info > a {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: calc(100% / 2 - (20px * 1 / 2));
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .card {
+    width: calc(100% / 3 - (20px * 2 / 3));
+  }
 }
