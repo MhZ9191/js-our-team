@@ -75,13 +75,31 @@ a {
   display: flex;
   gap: 5px;
   flex-direction: column;
-  background: linear-gradient(45deg, black, #e53170, black);
+  background: linear-gradient(
+    45deg,
+    black 0%,
+    #2a0012 25%,
+    #e53170 50%,
+    #2a0012 75%,
+    black 100%
+  );
   background-size: 300% 300%;
   animation: gradientMove 12s linear infinite;
 }
 
 .card-info > a {
   display: block;
+}
+
+#form-input {
+  margin-top: 40px;
+}
+
+#btn {
+  width: 30%;
+  margin: 0 auto 0 10px;
+  padding: 5px;
+  border-radius: 8px;
 }
 
 @media screen and (min-width: 768px) {
@@ -98,9 +116,9 @@ a {
 
 @keyframes gradientMove {
   0% {
-    background-position: 0% 50%;
+    background-position: 0% 30%;
   }
   100% {
-    background-position: 100% 50%;
+    background-position: 100% 60%;
   }
 }

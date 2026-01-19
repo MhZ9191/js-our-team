@@ -1,8 +1,13 @@
 function addCard(divMain) {
   let tmp = "";
   for (const teamMember of teamMembers) {
-    const { name, role, email, img } = teamMember;
-    tmp += `<div class="card">
+    tmp += AddMember(teamMember);
+  }
+  divMain.innerHTML = tmp;
+}
+
+function AddMember({ name, role, email, img }) {
+  const tmpMember = `<div class="card">
               <div class="card-image">
                 <img src="./${img}" alt="test" />
               </div>
@@ -12,7 +17,27 @@ function addCard(divMain) {
                 <a href="#">${email}</a>
               </div>
             </div>`;
-  }
+  return tmpMember;
+}
 
-  divMain.innerHTML = tmp;
+function send(e) {
+  e.preventDefault();
+  const nome = document.getElementById("nome");
+  const ruolo = document.getElementById("ruolo");
+  const mail = document.getElementById("emailz");
+  const immagine = document.getElementById("immagine");
+
+  const obj = {
+    name: nome.value,
+    role: ruolo.value,
+    email: mail.value,
+    img: immagine.value,
+  };
+  teamMembers.push(obj);
+  AddMember(obj);
+  addCard(divMain);
+  nome.value = "";
+  ruolo.value = "";
+  mail.value = "";
+  immagine.value = "";
 }
